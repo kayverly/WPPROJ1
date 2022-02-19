@@ -1,12 +1,16 @@
 .gamescreen {
     height: 100vh;
-    background-image: url("blank.png");
+    width: 100%;
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .enemyHp {
     border: 5px outset red;
-    background-color: lightblue;
+    background-color: lightskyblue;
     text-align: left;
     flex: 50%;
     font-size: 25px;
@@ -14,7 +18,7 @@
 
 .playerHp {
     border: 5px outset greenyellow;
-    background-color: white;
+    background-color: lightskyblue;
     text-align: left;
     color: black;
     width: auto;
@@ -38,9 +42,35 @@
     left: 0;
     right: 0;
     border: 5px outset grey;
-    padding: 2em;
+    padding: 1em;
     justify-content: space-between;
     margin: 0 auto;
+    background-color: lightskyblue;
+}
+
+.fightmenubar {
+    flex: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 5px outset grey;
+    padding: 1em;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: lightskyblue;
+
+}
+
+.fightmenubar li {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .button {
@@ -72,9 +102,39 @@ button:hover {
 
 .fleegamescreen {
     height: 100vh;
-    background-image: url("blank.png");
+    width: 100%;
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 2s, opacity 2s linear;
+    background-attachment: fixed;
+    animation: fadeOutAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
 }
